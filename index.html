@@ -1,0 +1,161 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KIDD - Profile</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Custom cursor -->
+        <div class="cursor"></div>
+        
+        <!-- Background Music -->
+        <audio id="bg-music" loop>
+            <source src="" type="audio/mpeg">
+            <source src="" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Audio Player -->
+        <div class="audio-player" id="audio-player">
+            <div class="audio-header">
+                <div class="audio-info">
+                    <img class="audio-cover" id="audio-cover" src="https://via.placeholder.com/50x50/1877f2/ffffff?text=♪" alt="Audio Cover">
+                    <div class="audio-details">
+                        <div class="audio-title" id="audio-title">Song Title</div>
+                        <div class="audio-artist" id="audio-artist">Artist Name</div>
+                    </div>
+                </div>
+                <button class="minimize-btn" id="minimize-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 13H5v-2h14v2z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="audio-content">
+                <div class="audio-controls-row">
+                    <button class="audio-btn" id="prev-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                        </svg>
+                    </button>
+                    <button class="audio-btn play-pause-btn" id="play-pause-btn">
+                        <svg id="play-icon-audio" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <svg id="pause-icon-audio" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                    </button>
+                    <button class="audio-btn" id="next-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="audio-progress">
+                    <span class="time-current" id="time-current">0:00</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                        <input type="range" class="progress-slider" id="progress-slider" min="0" max="100" value="0">
+                    </div>
+                    <span class="time-total" id="time-total">0:00</span>
+                </div>
+                
+                <div class="volume-control">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50">
+                </div>
+            </div>
+        </div>
+
+        <!-- Intro Screen -->
+        <div class="intro-screen" id="intro-screen">
+            <div class="intro-content">
+                <h1 class="main-title" id="main-title"></h1>
+                <p class="subtitle" id="subtitle"></p>
+                <button class="enter-btn" id="enter-btn">
+                    <span>Click to Enter</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Video Background -->
+        <video id="bg-video" autoplay muted loop playsinline style="display: none;">
+            <source src="" type="video/mp4">
+            <source src="" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Main Profile Content -->
+        <div class="main-content" id="main-content">
+            <div class="particles-container"></div>
+            
+            <div class="container">
+                <div class="profile-card">
+                    <!-- Card Header: Facebook Logo + Message -->
+                    <div class="card-header">
+                        <div class="facebook-logo-container">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="#1877f2">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <div class="card-message">
+                            <p>         </p>
+                        </div>
+                    </div>
+
+                    <!-- Avatar & Profile Info -->
+                    <div class="card-main">
+                        <div class="avatar-container">
+                            <img id="avatar" class="avatar" src="https://via.placeholder.com/150x150/1877f2/ffffff?text=FB" alt="Avatar">
+                            <div class="status-indicator" id="status-indicator"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 id="username">KIDD</h1>
+                            <div class="status-text" id="status-text">DND</div>
+                            <div class="facebook-info" id="facebook-info">
+                                <div class="fb-info-item">
+                                    <span class="fb-icon">📍</span>
+                                    <span id="location">Philippines</span>
+                                </div>
+                                <div class="fb-info-item">
+                                    <span class="fb-icon">👥</span>
+                                    <span id="friends-count">Loading friends...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Socials -->
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="facebook-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" id="instagram-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bottom Image Containers -->
+            
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© kidd, all rights reserved.</p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
