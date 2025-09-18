@@ -86,7 +86,7 @@ class FacebookProfile {
         const subtitleElement = document.getElementById('subtitle');
         
         const titleText = 'NIOBE';
-        const subtitleText = 'dasdas';
+        const subtitleText = '˚✧₊⁎ baby, you make me smile ⁺˳✧༚';
         
         let titleIndex = 0;
         let subtitleIndex = 0;
@@ -541,3 +541,4 @@ For a personal profile site, using static configuration (as implemented above)
 is much more practical and reliable.
 
 */
+
