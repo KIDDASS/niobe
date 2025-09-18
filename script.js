@@ -438,7 +438,7 @@ class FacebookProfile {
 // Facebook Profile Configuration
 const FACEBOOK_CONFIG = {
     name: 'Niobe', // Your display name
-    profilePicture: 'https://github.com/KIDDASS/niobe/raw/main/pic.png', // Your profile picture URL
+    profilePicture: 'https://github.com/KIDDASS/niobe/raw/main/image.png', // Your profile picture URL
     location: 'Philippines', // Your location
     friendsCount: 100423, // Number of friends (will animate to this number)
     profileUrl: 'https://www.facebook.com/jenren.niobe', // Your Facebook profile URL
@@ -539,4 +539,5 @@ However, this approach has major limitations:
 
 For a personal profile site, using static configuration (as implemented above) 
 is much more practical and reliable.
+
 */
